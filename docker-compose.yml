@@ -1,5 +1,5 @@
 services:
-  apigateway:
+  gateway:
     container_name: "gateway"
     image: ${DOCKER_REGISTRY-}gateway
     build:
@@ -8,7 +8,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "5000:8080" 
+      - "5000:5000" 
     depends_on:
       - productservice
       - orderservice
