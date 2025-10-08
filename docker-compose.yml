@@ -8,7 +8,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "5000:5000" 
+      - "5000:5000"
     depends_on:
       - productservice
       - orderservice
@@ -26,9 +26,9 @@ services:
       dockerfile: ProductService/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - CONNECTION_STRING=Server=productdb;Database=Products;User=root;Password=root;Port=3306 
+      - CONNECTION_STRING=Server=productdb;Database=Products;User=root;Password=root;Port=3306
     depends_on:
-      - productdb 
+      - productdb
     links:
       - productdb
     networks:
@@ -42,9 +42,9 @@ services:
       dockerfile: OrderService/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - CONNECTION_STRING=Server=orderdb;Database=Orders;User=root;Password=root;Port=3306 
+      - CONNECTION_STRING=Server=orderdb;Database=Orders;User=root;Password=root;Port=3306
     depends_on:
-      - orderdb 
+      - orderdb
     links:
       - orderdb
     networks:
