@@ -2,8 +2,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddServiceDefaults();
-
 // Add services to the container.
 
 builder.Services.AddDbContext<OrderServiceDbContext>(options =>
@@ -20,7 +18,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.MapDefaultEndpoints();
 
 using (var scope = app.Services.CreateScope())
 {
